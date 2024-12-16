@@ -49,6 +49,15 @@ def get_user_distance(distance):
     return distance['distance']
 
 
+def color_change(elev):
+    if (elev < 1):
+        return ('green')
+    elif (1 <= elev < 3):
+        return ('orange')
+    else:
+        return ('red')
+
+
 def main():
     with open("files/coffee.json", "r", encoding="CP1251") as coffee:
         coffee_house = coffee.read()
@@ -65,7 +74,8 @@ def main():
             location=[values['latitude'], values['longitude']],
             tooltip="Look coffee",
             popup=values['title'],
-            icon=folium.Icon(color='green'),
+            icon=folium.Icon(
+                color=color_change(int(round(values['distance'])))),
         ).add_to(m)
 
     m.save("files/index.html")
