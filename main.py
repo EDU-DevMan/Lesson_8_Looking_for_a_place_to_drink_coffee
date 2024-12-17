@@ -6,7 +6,7 @@ from decouple import config
 from geopy import distance
 
 
-APIKEY_YANDEX = config('apikey')
+APIKEY_YANDEX = config('APIKEY')
 
 
 def fetch_coordinates(apikey, address):
