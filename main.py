@@ -6,14 +6,14 @@ from decouple import config
 from geopy import distance
 
 
-APIKEY_YANDEX = config('APIKEY')
+APIKEY_YANDEX = config('apikey')
 
 
-def fetch_coordinates(APIKEY_YANDEX, address):
+def fetch_coordinates(apikey, address):
     base_url = "https://geocode-maps.yandex.ru/1.x"
     response = requests.get(base_url, params={
         "geocode": address,
-        "apikey": APIKEY_YANDEX,
+        "apikey": apikey,
         "format": "json",
     })
     response.raise_for_status()

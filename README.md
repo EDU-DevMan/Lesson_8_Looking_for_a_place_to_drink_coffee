@@ -2,4 +2,4 @@
 
 ### In the .inv file, you should use the following variables:
 
-APIKEY='<YOU_API>'
+apikey_yandex='<YOU_API>'
