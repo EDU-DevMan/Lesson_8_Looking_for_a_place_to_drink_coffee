@@ -9,7 +9,7 @@ from geopy import distance
 APIKEY_YANDEX = config('APIKEY')
 
 
-def fetch_coordinates(apikey, address):
+def fetch_coordinates(APIKEY_YANDEX, address):
     base_url = "https://geocode-maps.yandex.ru/1.x"
     response = requests.get(base_url, params={
         "geocode": address,
